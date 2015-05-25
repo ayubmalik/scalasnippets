@@ -66,4 +66,23 @@ object Classes extends App {
 
   println(new Employee)
   println(new Employee("tony"))
+
+  println("--- Primary constructors")
+  class Book(val title: String, val isbn: String) {
+    println("primary constructor called")
+  }
+
+  println(new Book("dummies", "123").isbn)
+
+  class Book2(val title: String, val isbn: String, private var price: Double)
+  
+  println(new Book2("dummies", "123", 1.00))
+  
+  class Book3(title: String) { def myTitle = title} // no public fields, but object-private
+  // println(new Book3("hello").title) // error because no val/var in constructor
+  println(new Book3("hello").myTitle)
+  
+  class Book4 private(val title: String)
+  
+  // println(new Book4("meh")) // error because private primary constructor :(
 }
