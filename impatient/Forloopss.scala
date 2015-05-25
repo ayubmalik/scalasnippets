@@ -1,6 +1,6 @@
 package impatient
 
-object ForLoop {
+object ForLoops {
 
   def main(args: Array[String]): Unit = {
 
