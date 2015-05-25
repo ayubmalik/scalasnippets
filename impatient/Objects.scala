@@ -20,6 +20,13 @@ object Objects extends App {
   println(Accounts.uniqueNumber())
   println(Accounts.uniqueNumber())
 
+  object Meh {
+    val r, g, b = 100
+  }
+  println(Meh.r)
+  println(Meh.g)
+  println(Meh.b)
+
   println("--- Object with extends")
   object Somefink extends StringOps
 
@@ -62,5 +69,22 @@ object Objects extends App {
   }
   val mm1 = Message2("bah")
   //val mm2 = new Message2("humbug") // not allowed. private primary constructor
+
+  println("--- Enumerations")
+  object TrafficLight extends Enumeration {
+    val Red, Amber, Green = Value
+  }
+
+  println(TrafficLight)
+  println(TrafficLight.Red)
+  println(TrafficLight.Amber)
+  println(TrafficLight.Red.getClass) // ouch
+  // val t: TrafficLight = TrafficLight.Amber // not allowed. the actual type is TrafficLight.Value
+  val t: TrafficLight.Value = TrafficLight.Amber
+  
+  println("ids")
+  println(TrafficLight(0))
+  println(TrafficLight(1))
+  println(TrafficLight(2))
 
 }
