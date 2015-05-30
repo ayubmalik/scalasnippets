@@ -1,5 +1,7 @@
 package impatient.files
 
+import scala.io.StdIn
+
 object ReadingData extends App {
 
   import scala.io.Source
@@ -34,4 +36,9 @@ object ReadingData extends App {
   val tokens = s3.mkString.split("\\s+")
   for (t <- tokens.slice(0,10) ) println(t)
   s3.close
+  
+  println("--- console input")
+  print("enter age: ")
+  val age = StdIn.readInt()
+  println("age = " + age)
 }
