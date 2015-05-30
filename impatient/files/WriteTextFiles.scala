@@ -32,6 +32,5 @@ object WriteTextFiles extends App {
   val pin = fin.readObject().asInstanceOf[AnotherPerson]
   fin.close
   println(pin.name)
-  
 
 }
