@@ -44,4 +44,9 @@ object Functions extends App {
   println(valueAtOneQuarter { x => x + 1 })
   println(valueAtOneQuarter { _ + 1 })
 
+  (1 to 9).map("*" * _).foreach(println _)
+  val r1 = (1 to 3) reduceLeft (_ + _)
+  println(r1)
+  val r2 = "Mary had a little lamb".split(" ").sortWith(_.length < _.length())
+  println(r2.mkString(" "))
 }
