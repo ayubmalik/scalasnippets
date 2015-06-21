@@ -54,4 +54,11 @@ object CollectionMatching extends App {
   val item2 = Item("banana", new Date, 1.50, 2.00)
   println(item1)
   println(item2)
+
+  item2 match {
+    case Item(n, c, p @ _*) => println("prices " + p)
+    case _@ other           => println(other)
+
+  }
+
 }
